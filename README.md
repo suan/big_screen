@@ -2,12 +2,12 @@
 Big Screen is a self-hosted web application that helps manage your locally stored movie collection. It recognizes bizzarely-named movie files and directories and queries IMDB for their proper titles and other information. It then provides a simple, sortable web page for your collection where you can play any movie with a single click.
 
 ## Installation/Platform Compatibility ##
-Big Screen has only been tested on Windows-32bit.  You need the following before you can install the app:
+- Big Screen has only been tested on Windows-32bit. You need the following before you can install the app:
 - Ruby 1.9.2
 - Rails 2.3.8 (other 2.x versions might work too)
 - sqlite3 and the sqlite3 gem
 - mongrel gem version 1.2.0 or greater (can be installed using 'gem install mongrel --pre') (You could use an alternative rails server if you like.)
-Once you have installed the above, simply download the app and unzip the folder anywhere. Then cd into Big Screen's home directory and run 'rake db:schema:load RAILS_ENV=production'
+- Once you have installed the above, simply download the app and unzip the folder anywhere. Then cd into Big Screen's home directory and run 'rake db:schema:load RAILS_ENV=production'
 
 ### Usage ###
 - Change the appropriate settings in config/config_production.yml
