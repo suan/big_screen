@@ -1,0 +1,14 @@
+<html>
+<head>
+<title> big_screen </title>
+<%= stylesheet_link_tag :all %>
+<%= javascript_include_tag :defaults %>
+<%= javascript_include_tag 'sorttable' %>
+</head>
+<body>
+
+<p style='color: green' > <%= flash[:notice] %> </p>
+<%= yield %>
+
+</body>
+</html>

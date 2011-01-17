@@ -1,0 +1,6 @@
+doc/
+log/
+db/production.sqlite3
+db/development.sqlite3
+config/config_production.yml
+config/config_development.yml

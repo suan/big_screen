@@ -1,0 +1,108 @@
+--- !ruby/object:Gem::Specification 
+name: imdb_party
+version: !ruby/object:Gem::Version 
+  prerelease: false
+  segments: 
+  - 0
+  - 4
+  - 0
+  version: 0.4.0
+platform: ruby
+authors: 
+- Jon Maddox
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2011-01-04 00:00:00 -06:00
+default_executable: 
+dependencies: 
+- !ruby/object:Gem::Dependency 
+  name: shoulda
+  prerelease: false
+  requirement: &id001 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        segments: 
+        - 0
+        version: "0"
+  type: :development
+  version_requirements: *id001
+- !ruby/object:Gem::Dependency 
+  name: httparty
+  prerelease: false
+  requirement: &id002 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        segments: 
+        - 0
+        version: "0"
+  type: :runtime
+  version_requirements: *id002
+description: IMDB client using the IMDB API that their iPhone app uses
+email: jon@mustacheinc.com
+executables: []
+
+extensions: []
+
+extra_rdoc_files: 
+- LICENSE
+- README.md
+files: 
+- .document
+- LICENSE
+- README.md
+- Rakefile
+- VERSION
+- imdb_party.gemspec
+- lib/imdb_party.rb
+- lib/imdb_party/httparty_icebox.rb
+- lib/imdb_party/imdb.rb
+- lib/imdb_party/movie.rb
+- lib/imdb_party/person.rb
+- test/movie_test.rb
+- test/person_test.rb
+- test/search_test.rb
+- test/test_helper.rb
+has_rdoc: true
+homepage: http://github.com/maddox/imdb_party
+licenses: []
+
+post_install_message: 
+rdoc_options: []
+
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 616772943
+      segments: 
+      - 0
+      version: "0"
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      segments: 
+      - 0
+      version: "0"
+requirements: []
+
+rubyforge_project: 
+rubygems_version: 1.3.7
+signing_key: 
+specification_version: 3
+summary: IMDB client using the IMDB API that their iPhone app uses
+test_files: 
+- test/movie_test.rb
+- test/person_test.rb
+- test/search_test.rb
+- test/test_helper.rb

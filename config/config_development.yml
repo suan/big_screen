@@ -1,0 +1,18 @@
+# directories that contain your movies
+movie_dirs:
+  - C:/My/Movies/Folder1
+  - C:/My/Movies/Inside/Folder2
+
+# requery IMDB info for all movies, even if they are already tracked
+refresh_all: true
+
+# This setting will only refresh all movies for the following run, after which it will
+# set 'refresh_all' to false. It is useful for example to reflect new code changes.
+# Ignored when 'refresh_all' is set to false.
+refresh_once_only: false
+
+# command to use to play a clicked movie
+play_command: START "" "C:/Program Files/VideoLAN/VLC/vlc" -f
+
+# currently unused
+unicode_filename_support: true

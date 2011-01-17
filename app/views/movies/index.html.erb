@@ -1,0 +1,15 @@
+<h1>Movies</h1>
+<table id="movies" class="sortable">
+  <tr>
+    <th>Title</th>
+    <th>Rating</th>
+    <th>Genres</th>
+  </tr>
+  <% @movies.each do |m| %>
+    <tr class="<%= alt_gen %>">
+      <td><%= link_to_remote m.title, :url => { :action => "play", :id => m.id } %></td>
+      <td><%= m.rating || "" %></td>
+      <td><%= m.genres || "" %></td>
+    </tr>
+  <% end %>
+</table>
