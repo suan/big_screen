@@ -1,4 +1,4 @@
-﻿# Big Screen #
+# Big Screen #
 Big Screen is a self-hosted web application that helps manage your locally stored movie collection. It recognizes bizzarely-named movie files and directories and queries IMDB for their proper titles and other information. It then provides a simple, sortable web page for your collection where you can play any movie with a single click.
 
 ## Installation/Platform Compatibility ##
