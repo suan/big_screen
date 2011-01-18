@@ -11,7 +11,7 @@ Big Screen is a self-hosted web application that helps manage your locally store
 
 ### Usage ###
 - Change the appropriate settings in config/config_production.yml
-- To load all your movies into the app, you need to 'cd' into the app's home directory and run 'rake batch_parse RAILS_ENV=production'. The first time, this will run for a long time (about 10 seconds per movie, depending on your spces) because the app takes md5sums of every movie file so it doesn't get confused when you rename and move around movies. However, all following runs will be reasonably fast.
+- To load all your movies into the app, you need to 'cd' into the app's home directory and run 'rake screen RAILS_ENV=production'. The first time, this will run for a long time (about 10 seconds per movie, depending on your spces) because the app takes md5sums of every movie file so it doesn't get confused when you rename and move around movies. However, all following runs will be reasonably fast.
 - To keep your collection up to date, you could do something like use Windows Scheduler to run the above rake task every night. That way, newly added movies will automatically get tracked.
 - Run bin/run_prod_server.vbs (or start the rails server of your choice in production mode.)
 - Open the app's homepage (for example http://localhost:3333) in your browser.
