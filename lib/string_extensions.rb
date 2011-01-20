@@ -5,9 +5,9 @@ class String
     puts "OOOOOOIIIIIIIINNNNNNNKKKKKKKK"
   end
 
-  # count as a movie if is of type video and larger than 300MB
+  # count as a movie if is of type video and larger than 550MB
   def is_movie?
-    return false unless File.file? self and File.size(self) > 314572800
+    return false unless File.file? self and File.size(self) > 576716800
     mts = MIME::Types.of(self)
     return true if not mts.empty? and mts.first.media_type == 'video'
     Rails.logger.warn "WARNING: #{self} may be a movie but its mime type is unrecognized!" if mts.empty?
