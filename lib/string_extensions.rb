@@ -23,7 +23,8 @@ class String
   end
   
   def is_year?
-    return false if self.length != 4
+    # puts "in is_year? #{self}"
+    return false if not self =~ /^[[:digit:]]{4}$/
     num = self.to_i
     num != 0 && num < 2100
   end
@@ -34,7 +35,7 @@ class String
   end
   
   def is_suspect?
-    self.scan(/[[:upper:]]/).length > 1 or self =~ /[[:alpha:]][[:digit:]]/) and
+    (self.scan(/[[:upper:]]/).length > 1 or self =~ /[[:alpha:]][[:digit:]]/) and
       not self.is_roman_numeral?
   end
   

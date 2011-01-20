@@ -38,7 +38,7 @@ class Token < String
       ((index < tokens.length-1 and not tokens[index+1..-1].any?{|t| t.is_year?}) or
       index == tokens.length-1)) or
     (is_suspect? and index > 0 and tokens[0..index-1].all?{|t| t.is_legible?}) or
-    (pos > 0 and (ori_str[pos -1] == '[' or ori_str[pos -1] == '{'))
+    (pos > 0 and (ori_str[pos - 1] == '[' or ori_str[pos - 1] == '{'))
   end
   
   def is_unwanted_year?(tokens)
@@ -145,7 +145,7 @@ def parse_title(str, movie)
   
   puts "tokens: #{tokens.inspect}"
   tokens.each_with_index{|t, index|
-    if t.is_separator? tokens, index, ori_str
+    if t.is_separator?(tokens, index, ori_str)
       movie.guessed_title = str.clean_cut t.pos
       return
     end
