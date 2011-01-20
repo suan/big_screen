@@ -32,12 +32,13 @@ class Token < String
     @pos = _pos
   end
   
-  def is_separator?(tokens, index)
+  def is_separator?(tokens, index, ori_str)
     # puts "in is_sep? #{self}, #{pos}"
     (is_year? and
       ((index < tokens.length-1 and not tokens[index+1..-1].any?{|t| t.is_year?}) or
       index == tokens.length-1)) or
-    (is_suspect? and index > 0 and tokens[0..index-1].all?{|t| t.is_legible?})
+    (is_suspect? and index > 0 and tokens[0..index-1].all?{|t| t.is_legible?}) or
+    (pos > 0 and (ori_str[pos -1] == '[' or ori_str[pos -1] == '{'))
   end
   
   def is_unwanted_year?(tokens)
@@ -55,8 +56,6 @@ end
 
 # returns the movie object if it exists, otherwise returns file's md5sum
 def get_movie(fullpath, use_parent = false)
-  puts "in get movie"
-  puts "in if config"
   fn = File.basename(fullpath)
   puts "filename: #{fn}"
   dir = File.dirname(fullpath)
@@ -132,6 +131,7 @@ end
 
 def parse_title(str, movie)
   puts "strlen: #{str.length}"
+  ori_str = str
   # strip extension
   str.chomp!(File.extname(str)) if movie.raw_title == movie.filename
   # strip non-alphanums from end of string
@@ -145,7 +145,7 @@ def parse_title(str, movie)
   
   puts "tokens: #{tokens.inspect}"
   tokens.each_with_index{|t, index|
-    if t.is_separator? tokens, index
+    if t.is_separator? tokens, index, ori_str
       movie.guessed_title = str.clean_cut t.pos
       return
     end

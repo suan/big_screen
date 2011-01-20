@@ -34,7 +34,8 @@ class String
   end
   
   def is_suspect?
-    self.scan(/[[:upper:]]/).length > 1 and not self.is_roman_numeral?
+    self.scan(/[[:upper:]]/).length > 1 or self =~ /[[:alpha:]][[:digit:]]/) and
+      not self.is_roman_numeral?
   end
   
   def is_roman_numeral?
@@ -42,14 +43,14 @@ class String
   end
   
   def clean_cut(pos)
-    puts "called clean_cut(#{pos})"
+    # puts "called clean_cut(#{pos})"
     begin
       pos -= 1
     end while self[pos, 1] !~ /[[:alnum:]]/
     # until self[pos, 1] =~ /[[:alnum:]]/ do
       # pos -= 1
     # end
-    puts "clean_cut returning #{self[0..pos]}"
+    # puts "clean_cut returning #{self[0..pos]}"
     self[0..pos]
   end
   
